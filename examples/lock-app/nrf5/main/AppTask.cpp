@@ -172,7 +172,7 @@ int AppTask::Init()
         ret = ConfigurationMgr().GetPairingCode(pairingCode, sizeof(pairingCode), pairingCodeSize);
         if (ret == CHIP_DEVICE_ERROR_CONFIG_NOT_FOUND)
         {
-            pairingCodeInt = 0x202020;
+            pairingCodeInt = 0x303030;
             sprintf(pairingCode, "%08ld", pairingCodeInt);
             ret = ConfigurationMgr().StorePairingCode(pairingCode, strlen(pairingCode));
             if (ret != CHIP_NO_ERROR)
@@ -188,7 +188,7 @@ int AppTask::Init()
 
         payload.version      = 1;
         payload.vendorID     = EXAMPLE_VENDOR_ID;
-        payload.productID    = 2020;
+        payload.productID    = 2021;
         payload.setUpPINCode = pairingCodeInt;
         chip::QRCodeSetupPayloadGenerator generator(payload);
 

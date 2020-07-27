@@ -148,7 +148,7 @@ void GenericThreadStackManagerImpl_FreeRTOS<ImplClass>::ThreadTaskMain(void * ar
     payload.version      = 1;
     payload.vendorID     = 1;
     payload.productID    = 1;
-    payload.setUpPINCode = 0x202020;
+    payload.setUpPINCode = 0x303030;
 
     for (size_t i = 0; i < sizeof(pskd) - 1; ++i)
     {
