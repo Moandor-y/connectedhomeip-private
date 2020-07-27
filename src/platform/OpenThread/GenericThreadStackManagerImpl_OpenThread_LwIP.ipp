@@ -225,8 +225,7 @@ void GenericThreadStackManagerImpl_OpenThread_LwIP<ImplClass>::UpdateThreadInter
                     }
 
                     // Set the address state to PREFERRED or ACTIVE depending on the state in OpenThread.
-                    // netif_ip6_addr_set_state(mNetIf, addrIdx, (otAddr->mPreferred && !otAddr->) ? IP6_ADDR_PREFERRED :
-                    // IP6_ADDR_VALID);
+                    netif_ip6_addr_set_state(mNetIf, addrIdx, otAddr->mPreferred ? IP6_ADDR_PREFERRED : IP6_ADDR_VALID);
 
                     // Record that the netif address slot was assigned during this loop.
                     addrAssigned[addrIdx] = true;
